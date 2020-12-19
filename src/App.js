@@ -1,14 +1,13 @@
-import React, { Component, useState } from 'react'
+import React, { useState } from 'react'
 import { makeStyles } from '@material-ui/core/styles';
-import { Grid, Paper, Typography } from "@material-ui/core";
+import { Grid, Typography } from "@material-ui/core";
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
-import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
-import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
 import votingOptions from './components/votingOptions'
 import Text from './components/Text';
+import { useTranslation} from 'react-i18next';
 
 
 const useStyles = makeStyles(theme => ({
@@ -48,6 +47,10 @@ const useStyles = makeStyles(theme => ({
 
 function Lista(props) {
   const classes = useStyles();
+  const { t, i18n } = useTranslation();
+  const changeLanguage = lng => {
+    i18n.changeLanguage(lng);
+  };
   return (
     <Grid container className={classes.container}>
       {votingOptions.map(votingOption => (
@@ -56,17 +59,16 @@ function Lista(props) {
             <CardActionArea onClick={() => props.onDecision(votingOption)}>
               <CardContent>
                 <Typography gutterBottom align="center" component="h5" variant="h5" className={classes.titleText}  >
-                  {/* {votingOption.name} */}
-
-                  <Text content={votingOption.name} symbol={votingOption.symbol}></Text>
-
+                  <Text content={t(`${votingOption.name}.name`)} symbol={votingOption.symbol}></Text>
                 </Typography>
-                <Typography color="textSecondary" component="p" className={classes.explainedText}>{votingOption.explained}</Typography>
+                <Typography color="textSecondary" component="p" className={classes.explainedText}>{t(`${votingOption.name}.explained`)}</Typography>
               </CardContent>
             </CardActionArea>
           </Card>
-        </Grid>
+        </Grid>        
       ))}
+      <button onClick={() => changeLanguage('pt')}>pt</button>
+      <button onClick={() => changeLanguage('en')}>en</button>
     </Grid>
   )
 }
