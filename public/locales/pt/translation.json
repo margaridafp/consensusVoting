@@ -1,0 +1,18 @@
+{
+    "Agree":{
+        "name": "Concordo",
+        "explained": "Eu concordo com a proposta"
+    },
+    "Reservations":{
+        "name": "Prudente",
+        "explained": "Não estou contra a proposta mas quero apresentar algumas preocupações"
+    },
+    "Standaside":{
+        "name": "Neutro",
+        "explained": "Eu não me oponho à proposta mas também não a defendo"
+    }, 
+    "Principled objection":{ 
+        "name": "Oponho-me",
+        "explained": "Estou contra a proposta atual mas comprometo-me a trabalhar com o grupo para encontrar uma solução que funcione para todos"
+    }
+}
