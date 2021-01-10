@@ -1,14 +1,13 @@
-import React, { Component, useState } from 'react'
+import React, { useState } from 'react'
 import { makeStyles } from '@material-ui/core/styles';
-import { Grid, Paper, Typography } from "@material-ui/core";
+import { Grid, Typography } from "@material-ui/core";
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
-import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
-import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
 import votingOptions from './components/votingOptions'
 import Text from './components/Text';
+import ResultText from './components/Result';
 
 
 const useStyles = makeStyles(theme => ({
@@ -36,18 +35,15 @@ const useStyles = makeStyles(theme => ({
   explainedText: {
     fontFamily: 'Roboto',
     color: "textSecondary",
-    textAlign: "justify",
-  },
-  result:{
-    height: '30vw',
-    align: 'center',
-    width: '100%'
-  },
-  resultText:{
-    fontWeight: "bold",
-    fontFamily: 'Roboto',
-    fontSize:'25vw ',
-  }
+    textAlign: "center",
+  },  
+  resultCircle: {
+    borderRadius: '50%',
+    width: '28px',
+    height: '28px',
+    padding: '8px',
+    color: 'white',
+},
 }));
 
 
@@ -68,10 +64,7 @@ function Lista(props) {
             <CardActionArea onClick={() => props.onDecision(votingOption)}>
               <CardContent>
                 <Typography gutterBottom component="h5" variant="h5" className={classes.titleText}  >
-                  {/* {votingOption.name} */}
-
-                  <Text content={votingOption.name} symbol={votingOption.symbol} color={votingOption.color}></Text>
-
+                  <Text content={votingOption.name} symbol={votingOption.symbol} color={votingOption.color}/>
                 </Typography>
                 <Typography color="textSecondary" component="p" className={classes.explainedText}>{votingOption.explained}</Typography>
               </CardContent>
@@ -85,7 +78,6 @@ function Lista(props) {
 }
 
 function App() {
-  const classes = useStyles();
   const [name, setName] = useState(null);
   const [symbol, setSymbol] = useState(null);
   const [color, setColor] = useState(null);
@@ -97,14 +89,10 @@ function App() {
   } else { 
     return (
       <>
-      <p align="right">
-        <Button variant="contained" onClick={()=>setName(null)}>Back</Button>
+      <p align="left">
+        <Button onClick={()=>setName(null)}>{'\u2329'} Back</Button>
       </p>
-      <Card variant="outlined" className={classes.result} style={{ background: color }}>
-        <Typography gutterBottom component="h1" variant="h1" align='center' className={classes.resultText}>
-          <Text content={symbol} />
-        </Typography>
-      </Card>
+          <ResultText symbol={symbol} color={color} />
       </>
       )
     }
