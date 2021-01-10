@@ -12,6 +12,10 @@ import Text from './components/Text';
 
 
 const useStyles = makeStyles(theme => ({
+  title: {
+    textAlign: 'center',
+    marginTop: '2vh'
+  },
   container: {
     display:"flex",
     flexDirection: "row",
@@ -21,15 +25,16 @@ const useStyles = makeStyles(theme => ({
   },
   card: {
     border: 'none',
-    height: '99%',
+    height: '95%',
     width: '99%',
   },
   titleText: {
     fontWeight: "bold",
-    fontFamily: 'Arial',
+    fontFamily: 'Roboto',
+    textAlign: '-webkit-center',
   },
   explainedText: {
-    fontFamily: 'Arial',
+    fontFamily: 'Roboto',
     color: "textSecondary",
     textAlign: "justify",
   },
@@ -40,7 +45,7 @@ const useStyles = makeStyles(theme => ({
   },
   resultText:{
     fontWeight: "bold",
-    fontFamily: 'Arial',
+    fontFamily: 'Roboto',
     fontSize:'25vw ',
   }
 }));
@@ -49,16 +54,23 @@ const useStyles = makeStyles(theme => ({
 function Lista(props) {
   const classes = useStyles();
   return (
+    <>
+      <Typography 
+      variant="h5" 
+      className={classes.title}
+      gutterBottom>
+        SUBMIT YOUR VOTE
+      </Typography>
     <Grid container className={classes.container}>
       {votingOptions.map(votingOption => (
         <Grid item key={votingOption.name} sm={6} >
-          <Card variant="outlined" className={classes.card} style={{ background: votingOption.color }}>
+          <Card variant="outlined" className={classes.card}>
             <CardActionArea onClick={() => props.onDecision(votingOption)}>
               <CardContent>
-                <Typography gutterBottom align="center" component="h5" variant="h5" className={classes.titleText}  >
+                <Typography gutterBottom component="h5" variant="h5" className={classes.titleText}  >
                   {/* {votingOption.name} */}
 
-                  <Text content={votingOption.name} symbol={votingOption.symbol}></Text>
+                  <Text content={votingOption.name} symbol={votingOption.symbol} color={votingOption.color}></Text>
 
                 </Typography>
                 <Typography color="textSecondary" component="p" className={classes.explainedText}>{votingOption.explained}</Typography>
@@ -68,6 +80,7 @@ function Lista(props) {
         </Grid>
       ))}
     </Grid>
+    </>
   )
 }
 
