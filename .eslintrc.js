@@ -23,6 +23,9 @@ module.exports = {
     'require-jsdoc': [
       'off',
     ],
+    'react/prop-types': [
+      'off',
+    ],
     'no-multiple-empty-lines': [
       'error', {'max': 1},
     ],
@@ -33,8 +36,7 @@ module.exports = {
     'import/order': 'off',
   },
   globals: {
-    'window': true,
-    'process': true,
+    'document': true,
   },
 
 };
