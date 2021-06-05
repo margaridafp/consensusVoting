@@ -1,20 +1,20 @@
 {
   "files": {
     "main.css": "/consensusVoting/static/css/main.6e6bf1bd.chunk.css",
-    "main.js": "/consensusVoting/static/js/main.514a7e21.chunk.js",
-    "main.js.map": "/consensusVoting/static/js/main.514a7e21.chunk.js.map",
-    "runtime-main.js": "/consensusVoting/static/js/runtime-main.f62c0f18.js",
-    "runtime-main.js.map": "/consensusVoting/static/js/runtime-main.f62c0f18.js.map",
-    "static/js/2.f160f3a7.chunk.js": "/consensusVoting/static/js/2.f160f3a7.chunk.js",
-    "static/js/2.f160f3a7.chunk.js.map": "/consensusVoting/static/js/2.f160f3a7.chunk.js.map",
+    "main.js": "/consensusVoting/static/js/main.60bd1daa.chunk.js",
+    "main.js.map": "/consensusVoting/static/js/main.60bd1daa.chunk.js.map",
+    "runtime-main.js": "/consensusVoting/static/js/runtime-main.dc3d8b2c.js",
+    "runtime-main.js.map": "/consensusVoting/static/js/runtime-main.dc3d8b2c.js.map",
+    "static/js/2.b1fabc17.chunk.js": "/consensusVoting/static/js/2.b1fabc17.chunk.js",
+    "static/js/2.b1fabc17.chunk.js.map": "/consensusVoting/static/js/2.b1fabc17.chunk.js.map",
     "index.html": "/consensusVoting/index.html",
     "static/css/main.6e6bf1bd.chunk.css.map": "/consensusVoting/static/css/main.6e6bf1bd.chunk.css.map",
-    "static/js/2.f160f3a7.chunk.js.LICENSE.txt": "/consensusVoting/static/js/2.f160f3a7.chunk.js.LICENSE.txt"
+    "static/js/2.b1fabc17.chunk.js.LICENSE.txt": "/consensusVoting/static/js/2.b1fabc17.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.f62c0f18.js",
-    "static/js/2.f160f3a7.chunk.js",
+    "static/js/runtime-main.dc3d8b2c.js",
+    "static/js/2.b1fabc17.chunk.js",
     "static/css/main.6e6bf1bd.chunk.css",
-    "static/js/main.514a7e21.chunk.js"
+    "static/js/main.60bd1daa.chunk.js"
   ]
 }
